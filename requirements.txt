@@ -1,0 +1,20 @@
+# Named Entity Recognition Dataset - Requirements
+# Project: Named Entity Recognition Dataset
+# Author: RSK World
+# Website: https://rskworld.in
+# Email: help@rskworld.in
+# Phone: +91 93305 39277
+
+spacy>=3.4.0
+nltk>=3.8
+transformers>=4.21.0
+torch>=1.12.0
+pandas>=1.5.0
+numpy>=1.23.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+scikit-learn>=1.1.0
+flask>=2.3.0
+flask-cors>=4.0.0
+tqdm>=4.65.0
+

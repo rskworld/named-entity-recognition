@@ -1,0 +1,72 @@
+text,entity_type,start,end,entity_text
+"Apple Inc. was founded by Steve Jobs in Cupertino, California on April 1, 1976.",ORG,0,9,Apple Inc.
+"Apple Inc. was founded by Steve Jobs in Cupertino, California on April 1, 1976.",PERSON,30,40,Steve Jobs
+"Apple Inc. was founded by Steve Jobs in Cupertino, California on April 1, 1976.",LOC,44,62,Cupertino, California
+"Apple Inc. was founded by Steve Jobs in Cupertino, California on April 1, 1976.",DATE,66,79,April 1, 1976
+"Microsoft Corporation is headquartered in Redmond, Washington.",ORG,0,22,Microsoft Corporation
+"Microsoft Corporation is headquartered in Redmond, Washington.",LOC,47,67,Redmond, Washington
+"Elon Musk is the CEO of Tesla and SpaceX.",PERSON,0,9,Elon Musk
+"Elon Musk is the CEO of Tesla and SpaceX.",ORG,23,28,Tesla
+"Elon Musk is the CEO of Tesla and SpaceX.",ORG,33,39,SpaceX
+"The conference will be held in New York on March 15, 2024.",LOC,32,40,New York
+"The conference will be held in New York on March 15, 2024.",DATE,44,57,March 15, 2024
+"Amazon Web Services was launched in 2006.",ORG,0,20,Amazon Web Services
+"Amazon Web Services was launched in 2006.",DATE,42,46,2006
+"Barack Obama was the 44th President of the United States.",PERSON,0,12,Barack Obama
+"Barack Obama was the 44th President of the United States.",LOC,42,59,United States
+"Google was founded in Menlo Park, California in 1998.",ORG,0,6,Google
+"Google was founded in Menlo Park, California in 1998.",LOC,22,45,Menlo Park, California
+"Google was founded in Menlo Park, California in 1998.",DATE,49,53,1998
+"Tim Cook became CEO of Apple in 2011.",PERSON,0,8,Tim Cook
+"Tim Cook became CEO of Apple in 2011.",ORG,20,25,Apple
+"Tim Cook became CEO of Apple in 2011.",DATE,29,33,2011
+"The United Nations is located in New York City.",ORG,4,19,United Nations
+"The United Nations is located in New York City.",LOC,36,49,New York City
+"Mark Zuckerberg founded Facebook in 2004.",PERSON,0,14,Mark Zuckerberg
+"Mark Zuckerberg founded Facebook in 2004.",ORG,23,31,Facebook
+"Mark Zuckerberg founded Facebook in 2004.",DATE,35,39,2004
+"NASA launched the Mars rover in July 2020.",ORG,0,4,NASA
+"NASA launched the Mars rover in July 2020.",DATE,30,39,July 2020
+"The World Bank is based in Washington, D.C.",ORG,4,15,World Bank
+"The World Bank is based in Washington, D.C.",LOC,29,43,Washington, D.C.
+"Satya Nadella is the CEO of Microsoft.",PERSON,0,13,Satya Nadella
+"Satya Nadella is the CEO of Microsoft.",ORG,27,36,Microsoft
+"Amazon was founded by Jeff Bezos in Seattle.",ORG,0,6,Amazon
+"Amazon was founded by Jeff Bezos in Seattle.",PERSON,24,33,Jeff Bezos
+"Amazon was founded by Jeff Bezos in Seattle.",LOC,37,44,Seattle
+"The iPhone was announced by Apple on January 9, 2007.",ORG,28,33,Apple
+"The iPhone was announced by Apple on January 9, 2007.",DATE,37,52,January 9, 2007
+"Netflix was founded in Los Gatos, California in 1997.",ORG,0,7,Netflix
+"Netflix was founded in Los Gatos, California in 1997.",LOC,25,45,Los Gatos, California
+"Netflix was founded in Los Gatos, California in 1997.",DATE,49,53,1997
+"Warren Buffett is the chairman of Berkshire Hathaway.",PERSON,0,13,Warren Buffett
+"Warren Buffett is the chairman of Berkshire Hathaway.",ORG,35,54,Berkshire Hathaway
+"The Olympics will be held in Paris in 2024.",LOC,27,32,Paris
+"The Olympics will be held in Paris in 2024.",DATE,36,40,2024
+"Bill Gates co-founded Microsoft in 1975.",PERSON,0,9,Bill Gates
+"Bill Gates co-founded Microsoft in 1975.",ORG,22,31,Microsoft
+"Bill Gates co-founded Microsoft in 1975.",DATE,35,39,1975
+"Twitter was acquired by Elon Musk in October 2022.",ORG,0,7,Twitter
+"Twitter was acquired by Elon Musk in October 2022.",PERSON,25,34,Elon Musk
+"Twitter was acquired by Elon Musk in October 2022.",DATE,38,50,October 2022
+"The European Union is headquartered in Brussels.",ORG,4,18,European Union
+"The European Union is headquartered in Brussels.",LOC,45,53,Brussels
+"Sundar Pichai is the CEO of Google and Alphabet.",PERSON,0,12,Sundar Pichai
+"Sundar Pichai is the CEO of Google and Alphabet.",ORG,26,32,Google
+"Sundar Pichai is the CEO of Google and Alphabet.",ORG,37,45,Alphabet
+"The company moved its headquarters to Austin, Texas in 2021.",LOC,40,52,Austin, Texas
+"The company moved its headquarters to Austin, Texas in 2021.",DATE,56,60,2021
+"Meta Platforms was rebranded from Facebook in October 2021.",ORG,0,13,Meta Platforms
+"Meta Platforms was rebranded from Facebook in October 2021.",ORG,33,41,Facebook
+"Meta Platforms was rebranded from Facebook in October 2021.",DATE,45,58,October 2021
+"Jensen Huang is the founder of NVIDIA.",PERSON,0,12,Jensen Huang
+"Jensen Huang is the founder of NVIDIA.",ORG,30,35,NVIDIA
+"The headquarters is located in San Francisco, California.",LOC,30,55,San Francisco, California
+"OpenAI was founded in San Francisco in 2015.",ORG,0,6,OpenAI
+"OpenAI was founded in San Francisco in 2015.",LOC,25,37,San Francisco
+"OpenAI was founded in San Francisco in 2015.",DATE,41,45,2015
+"Larry Page and Sergey Brin founded Google in 1998.",PERSON,0,9,Larry Page
+"Larry Page and Sergey Brin founded Google in 1998.",PERSON,14,25,Sergey Brin
+"Larry Page and Sergey Brin founded Google in 1998.",ORG,33,39,Google
+"Larry Page and Sergey Brin founded Google in 1998.",DATE,43,47,1998
+

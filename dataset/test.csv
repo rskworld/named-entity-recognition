@@ -1,0 +1,52 @@
+text,entity_type,start,end,entity_text
+"IBM was founded in Armonk, New York in 1911.",ORG,0,3,IBM
+"IBM was founded in Armonk, New York in 1911.",LOC,20,35,Armonk, New York
+"IBM was founded in Armonk, New York in 1911.",DATE,39,43,1911
+"Reed Hastings is the co-founder of Netflix.",PERSON,0,13,Reed Hastings
+"Reed Hastings is the co-founder of Netflix.",ORG,33,40,Netflix
+"The summit will take place in Tokyo, Japan in May 2024.",LOC,28,40,Tokyo, Japan
+"The summit will take place in Tokyo, Japan in May 2024.",DATE,44,52,May 2024
+"Oracle Corporation is based in Austin, Texas.",ORG,0,15,Oracle Corporation
+"Oracle Corporation is based in Austin, Texas.",LOC,29,41,Austin, Texas
+"Jack Ma founded Alibaba Group in Hangzhou, China in 1999.",PERSON,0,7,Jack Ma
+"Jack Ma founded Alibaba Group in Hangzhou, China in 1999.",ORG,15,28,Alibaba Group
+"Jack Ma founded Alibaba Group in Hangzhou, China in 1999.",LOC,32,47,Hangzhou, China
+"Jack Ma founded Alibaba Group in Hangzhou, China in 1999.",DATE,51,55,1999
+"The Federal Reserve is located in Washington, D.C.",ORG,4,18,Federal Reserve
+"The Federal Reserve is located in Washington, D.C.",LOC,34,48,Washington, D.C.
+"Adobe Systems was founded in Mountain View, California.",ORG,0,12,Adobe Systems
+"Adobe Systems was founded in Mountain View, California.",LOC,30,52,Mountain View, California
+"Sheryl Sandberg was the COO of Facebook.",PERSON,0,14,Sheryl Sandberg
+"Sheryl Sandberg was the COO of Facebook.",ORG,32,40,Facebook
+"The conference is scheduled for London, UK on June 10, 2024.",LOC,33,42,London, UK
+"The conference is scheduled for London, UK on June 10, 2024.",DATE,46,59,June 10, 2024
+"Salesforce is headquartered in San Francisco, California.",ORG,0,10,Salesforce
+"Salesforce is headquartered in San Francisco, California.",LOC,30,52,San Francisco, California
+"Intel Corporation was founded in Santa Clara, California in 1968.",ORG,0,15,Intel Corporation
+"Intel Corporation was founded in Santa Clara, California in 1968.",LOC,33,55,Santa Clara, California
+"Intel Corporation was founded in Santa Clara, California in 1968.",DATE,59,63,1968
+"Uber was founded in San Francisco in 2009.",ORG,0,4,Uber
+"Uber was founded in San Francisco in 2009.",LOC,20,32,San Francisco
+"Uber was founded in San Francisco in 2009.",DATE,36,40,2009
+"The World Health Organization is based in Geneva, Switzerland.",ORG,4,28,World Health Organization
+"The World Health Organization is based in Geneva, Switzerland.",LOC,37,57,Geneva, Switzerland
+"Airbnb was founded in San Francisco in 2008.",ORG,0,6,Airbnb
+"Airbnb was founded in San Francisco in 2008.",LOC,22,34,San Francisco
+"Airbnb was founded in San Francisco in 2008.",DATE,38,42,2008
+"Zoom was founded by Eric Yuan in San Jose, California in 2011.",ORG,0,4,Zoom
+"Zoom was founded by Eric Yuan in San Jose, California in 2011.",PERSON,20,29,Eric Yuan
+"Zoom was founded by Eric Yuan in San Jose, California in 2011.",LOC,33,52,San Jose, California
+"Zoom was founded by Eric Yuan in San Jose, California in 2011.",DATE,56,60,2011
+"Spotify is headquartered in Stockholm, Sweden.",ORG,0,7,Spotify
+"Spotify is headquartered in Stockholm, Sweden.",LOC,28,44,Stockholm, Sweden
+"The meeting will be held in Berlin, Germany on September 5, 2024.",LOC,28,42,Berlin, Germany
+"The meeting will be held in Berlin, Germany on September 5, 2024.",DATE,46,63,September 5, 2024
+"LinkedIn was acquired by Microsoft in 2016.",ORG,0,7,LinkedIn
+"LinkedIn was acquired by Microsoft in 2016.",ORG,25,34,Microsoft
+"LinkedIn was acquired by Microsoft in 2016.",DATE,38,42,2016
+"Palantir Technologies is based in Denver, Colorado.",ORG,0,18,Palantir Technologies
+"Palantir Technologies is based in Denver, Colorado.",LOC,28,43,Denver, Colorado
+"Dropbox was founded in San Francisco in 2007.",ORG,0,7,Dropbox
+"Dropbox was founded in San Francisco in 2007.",LOC,23,35,San Francisco
+"Dropbox was founded in San Francisco in 2007.",DATE,39,43,2007
+

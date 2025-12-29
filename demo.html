@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Project: Named Entity Recognition Dataset
+    Author: RSK World
+    Website: https://rskworld.in
+    Email: help@rskworld.in
+    Phone: +91 93305 39277
+    Description: Interactive demo page for Named Entity Recognition Dataset
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Named Entity Recognition Dataset - Demo | RSK World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            display: block;
+            visibility: visible;
+        }
+
+        .header-top {
+            background: rgba(0,0,0,0.2);
+            padding: 10px 0;
+            font-size: 14px;
+            display: block;
+            visibility: visible;
+            width: 100%;
+        }
+
+        .header-top .container,
+        .header-main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            background: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            overflow: visible;
+        }
+
+        .header-top a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .header-top a:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        .header-main {
+            padding: 30px 20px;
+            display: block;
+            visibility: visible;
+            width: 100%;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo i {
+            font-size: 2.5em;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover i {
+            transform: rotate(360deg);
+        }
+
+        .logo-text h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        /* Keep .container for backward compatibility but override for main content */
+        .container:not(header .container):not(footer .container) {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        /* Ensure header containers don't inherit main container styles */
+        header .container,
+        header .header-top .container,
+        header .header-main .container {
+            background: transparent !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            overflow: visible !important;
+            margin: 0 !important;
+            padding: 0 20px !important;
+        }
+        
+        /* Ensure footer container doesn't inherit main container styles */
+        footer .container {
+            background: transparent !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            overflow: visible !important;
+            margin: 0 auto !important;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .input-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .result-section {
+            margin-top: 30px;
+        }
+
+        .highlighted-text {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            line-height: 1.8;
+            font-size: 16px;
+            min-height: 100px;
+        }
+
+        .entity {
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin: 0 2px;
+            display: inline-block;
+        }
+
+        .entity-PERSON {
+            background-color: #FF6B6B;
+            color: white;
+        }
+
+        .entity-ORG {
+            background-color: #4ECDC4;
+            color: white;
+        }
+
+        .entity-LOC {
+            background-color: #45B7D1;
+            color: white;
+        }
+
+        .entity-DATE {
+            background-color: #FFA07A;
+            color: white;
+        }
+
+        .entity-MONEY {
+            background-color: #98D8C8;
+            color: #333;
+        }
+
+        .entity-PERCENT {
+            background-color: #F7DC6F;
+            color: #333;
+        }
+
+        .legend {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .legend h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+        }
+
+        .sample-texts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .sample-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .sample-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 50px 20px 20px;
+            margin-top: 20px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            overflow: visible;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #4ECDC4;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-section a:hover {
+            color: #4ECDC4;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #4ECDC4;
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        /* Dataset Display Section */
+        .dataset-section {
+            margin-top: 40px;
+        }
+
+        .dataset-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .dataset-tab {
+            padding: 15px 30px;
+            background: #f8f9fa;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .dataset-tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            background: white;
+        }
+
+        .dataset-tab:hover {
+            color: #667eea;
+        }
+
+        .dataset-content {
+            display: none;
+        }
+
+        .dataset-content.active {
+            display: block;
+        }
+
+        .data-search {
+            margin-bottom: 20px;
+        }
+
+        .data-search input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .data-search input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .data-samples {
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .data-sample {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .data-sample:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .data-sample-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .data-sample-id {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .data-sample-entities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .data-sample-text {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .data-stats {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .data-stat-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .data-stat-item h4 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .data-stat-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div>
+                    <a href="mailto:help@rskworld.in"><i class="fas fa-envelope"></i> help@rskworld.in</a>
+                    <a href="tel:+919330539277"><i class="fas fa-phone"></i> +91 93305 39277</a>
+                </div>
+                <div>
+                    <a href="https://rskworld.in" target="_blank"><i class="fas fa-globe"></i> rskworld.in</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="logo-text">
+                        <h1>NER Dataset</h1>
+                        <p>Named Entity Recognition</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="#dataset">Dataset</a></li>
+                        <li><a href="index.html#technologies">Technologies</a></li>
+                        <li><a href="README.md">Documentation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="fas fa-file-alt"></i> Named Entity Recognition Dataset</h1>
+            <p>Interactive Demo - Extract entities from text</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2><i class="fas fa-keyboard"></i> Try It Out</h2>
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="textInput">Enter text to analyze:</label>
+                        <textarea id="textInput" placeholder="Enter text here... Example: Apple Inc. was founded by Steve Jobs in Cupertino, California on April 1, 1976.">Apple Inc. was founded by Steve Jobs in Cupertino, California on April 1, 1976.</textarea>
+                    </div>
+                    <button onclick="analyzeText()">
+                        <i class="fas fa-search"></i> Analyze Entities
+                    </button>
+                </div>
+
+                <div class="result-section">
+                    <h3>Results:</h3>
+                    <div id="highlightedText" class="highlighted-text">
+                        Enter text above and click "Analyze Entities" to see results.
+                    </div>
+
+                    <div id="stats" class="stats" style="display: none;"></div>
+                </div>
+
+                <div class="legend">
+                    <h3><i class="fas fa-tags"></i> Entity Types</h3>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <div class="legend-color entity-PERSON"></div>
+                            <span>PERSON</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color entity-ORG"></div>
+                            <span>ORG</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color entity-LOC"></div>
+                            <span>LOC</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color entity-DATE"></div>
+                            <span>DATE</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color entity-MONEY"></div>
+                            <span>MONEY</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color entity-PERCENT"></div>
+                            <span>PERCENT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-lightbulb"></i> Sample Texts</h2>
+                <p>Click on any sample to analyze it:</p>
+                <div class="sample-texts">
+                    <div class="sample-card" onclick="loadSample('Apple Inc. was founded by Steve Jobs in Cupertino, California on April 1, 1976.')">
+                        <strong>Tech Company</strong><br>
+                        Apple Inc. was founded by Steve Jobs...
+                    </div>
+                    <div class="sample-card" onclick="loadSample('Elon Musk is the CEO of Tesla and SpaceX.')">
+                        <strong>Business Leader</strong><br>
+                        Elon Musk is the CEO of Tesla...
+                    </div>
+                    <div class="sample-card" onclick="loadSample('The conference will be held in New York on March 15, 2024.')">
+                        <strong>Event</strong><br>
+                        The conference will be held in New York...
+                    </div>
+                    <div class="sample-card" onclick="loadSample('Microsoft Corporation is headquartered in Redmond, Washington.')">
+                        <strong>Corporation</strong><br>
+                        Microsoft Corporation is headquartered...
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-info-circle"></i> About This Dataset</h2>
+                <p>This Named Entity Recognition dataset contains labeled entities including:</p>
+                <ul style="margin-left: 20px; margin-top: 10px; line-height: 2;">
+                    <li><strong>Persons:</strong> Names of people</li>
+                    <li><strong>Organizations:</strong> Companies, institutions, and organizations</li>
+                    <li><strong>Locations:</strong> Cities, countries, and geographical locations</li>
+                    <li><strong>Dates:</strong> Time expressions and dates</li>
+                    <li><strong>Money:</strong> Monetary values</li>
+                    <li><strong>Percent:</strong> Percentage values</li>
+                </ul>
+                <p style="margin-top: 20px;">
+                    The dataset is available in multiple formats (CSV, JSON, BIO) and is ready for training NER models using spaCy, NLTK, or Transformers.
+                </p>
+            </div>
+
+            <div class="section dataset-section" id="dataset">
+                <h2><i class="fas fa-database"></i> Complete Dataset</h2>
+                <p>Browse all training and test samples with labeled entities:</p>
+                
+                <div class="dataset-tabs">
+                    <button class="dataset-tab active" onclick="showDataset('train', this)">
+                        <i class="fas fa-graduation-cap"></i> Training Data (50 samples)
+                    </button>
+                    <button class="dataset-tab" onclick="showDataset('test', this)">
+                        <i class="fas fa-vial"></i> Test Data (30 samples)
+                    </button>
+                </div>
+
+                <div id="trainData" class="dataset-content active">
+                    <div class="data-search">
+                        <input type="text" id="trainSearch" placeholder="Search training data..." onkeyup="filterData('train', this.value)">
+                    </div>
+                    <div id="trainStats" class="data-stats"></div>
+                    <div id="trainSamples" class="data-samples"></div>
+                </div>
+
+                <div id="testData" class="dataset-content">
+                    <div class="data-search">
+                        <input type="text" id="testSearch" placeholder="Search test data..." onkeyup="filterData('test', this.value)">
+                    </div>
+                    <div id="testStats" class="data-stats"></div>
+                    <div id="testSamples" class="data-samples"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>Named Entity Recognition Dataset for information extraction and NLP model training. Created by RSK World.</p>
+                    <div class="social-links">
+                        <a href="https://rskworld.in" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                        <a href="mailto:help@rskworld.in" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+919330539277" title="Phone"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="README.md">Documentation</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="dataset/train.json">Training Data</a></li>
+                        <li><a href="dataset/test.json">Test Data</a></li>
+                        <li><a href="scripts/">Scripts</a></li>
+                        <li><a href="requirements.txt">Requirements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-globe"></i> <a href="https://rskworld.in" target="_blank">rskworld.in</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:help@rskworld.in">help@rskworld.in</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+919330539277">+91 93305 39277</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>RSK World</strong> - Free Programming Resources & Source Code. All rights reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">
+                    Licensed under <a href="LICENSE" style="color: #4ECDC4;">MIT License</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple NER patterns (for demo purposes)
+        const patterns = {
+            PERSON: [
+                /\b([A-Z][a-z]+ [A-Z][a-z]+)\b/g,  // First Last
+                /\b([A-Z][a-z]+ [A-Z]\. [A-Z][a-z]+)\b/g  // First M. Last
+            ],
+            ORG: [
+                /\b([A-Z][a-z]+ (?:Inc\.|Corporation|Corp\.|LLC|Ltd\.|Company|Co\.))\b/g,
+                /\b([A-Z][A-Z]+)\b/g,  // Acronyms like NASA, IBM
+                /\b(Apple|Microsoft|Google|Amazon|Facebook|Twitter|Tesla|SpaceX|Netflix|Uber|Airbnb|Spotify|LinkedIn|Zoom|Dropbox|Salesforce|Oracle|Intel|Adobe|NVIDIA|OpenAI|Meta|Alphabet)\b/g
+            ],
+            LOC: [
+                /\b([A-Z][a-z]+(?:, [A-Z][a-z]+)?)\b/g,  // City, State
+                /\b(New York|Los Angeles|San Francisco|Chicago|Houston|Phoenix|Philadelphia|San Antonio|San Diego|Dallas|San Jose|Austin|Jacksonville|Fort Worth|Columbus|Charlotte|San Francisco|Indianapolis|Seattle|Denver|Washington|Boston|El Paso|Detroit|Nashville|Portland|Oklahoma City|Las Vegas|Memphis|Louisville|Baltimore|Milwaukee|Albuquerque|Tucson|Fresno|Sacramento|Kansas City|Mesa|Atlanta|Omaha|Colorado Springs|Raleigh|Virginia Beach|Miami|Oakland|Minneapolis|Tulsa|Cleveland|Wichita|Arlington)\b/g,
+                /\b(United States|USA|UK|Canada|Mexico|China|Japan|India|Germany|France|Italy|Spain|Brazil|Australia|Russia|South Korea|Netherlands|Sweden|Switzerland|Belgium|Norway|Denmark|Finland|Poland|Austria|Greece|Portugal|Ireland|Czech Republic|Romania|Hungary)\b/g
+            ],
+            DATE: [
+                /\b(January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}\b/g,
+                /\b\d{4}\b/g,  // Years
+                /\b(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}\b/g
+            ],
+            MONEY: [
+                /\$\d+(?:,\d{3})*(?:\.\d{2})?\b/g,
+                /\b\d+(?:,\d{3})* (?:dollars|USD)\b/gi
+            ],
+            PERCENT: [
+                /\b\d+(?:\.\d+)?%\b/g
+            ]
+        };
+
+        function analyzeText() {
+            const text = document.getElementById('textInput').value;
+            if (!text.trim()) {
+                alert('Please enter some text to analyze.');
+                return;
+            }
+
+            const entities = extractEntities(text);
+            displayResults(text, entities);
+        }
+
+        function extractEntities(text) {
+            const entities = [];
+            const entityMap = new Map();
+
+            // Extract entities for each type
+            for (const [type, patternList] of Object.entries(patterns)) {
+                for (const pattern of patternList) {
+                    let match;
+                    while ((match = pattern.exec(text)) !== null) {
+                        const start = match.index;
+                        const end = start + match[0].length;
+                        const entityText = match[0];
+
+                        // Check if this position is already covered
+                        let overlap = false;
+                        for (const [existingStart, existingEnd] of entityMap.keys()) {
+                            if (!(end <= existingStart || start >= existingEnd)) {
+                                overlap = true;
+                                break;
+                            }
+                        }
+
+                        if (!overlap) {
+                            entities.push({
+                                text: entityText,
+                                type: type,
+                                start: start,
+                                end: end
+                            });
+                            entityMap.set([start, end], type);
+                        }
+                    }
+                }
+            }
+
+            // Sort by start position
+            entities.sort((a, b) => a.start - b.start);
+            return entities;
+        }
+
+        function displayResults(text, entities) {
+            let highlighted = text;
+            const stats = {};
+
+            // Highlight entities (process in reverse to maintain indices)
+            for (let i = entities.length - 1; i >= 0; i--) {
+                const entity = entities[i];
+                const before = highlighted.substring(0, entity.start);
+                const after = highlighted.substring(entity.end);
+                const highlightedEntity = `<span class="entity entity-${entity.type}" title="${entity.type}">${entity.text}</span>`;
+                highlighted = before + highlightedEntity + after;
+
+                // Count entities
+                stats[entity.type] = (stats[entity.type] || 0) + 1;
+            }
+
+            document.getElementById('highlightedText').innerHTML = highlighted || '<em>No entities found.</em>';
+
+            // Display statistics
+            const statsDiv = document.getElementById('stats');
+            if (Object.keys(stats).length > 0) {
+                statsDiv.style.display = 'grid';
+                statsDiv.innerHTML = Object.entries(stats).map(([type, count]) => `
+                    <div class="stat-card">
+                        <h3>${count}</h3>
+                        <p>${type}</p>
+                    </div>
+                `).join('');
+            } else {
+                statsDiv.style.display = 'none';
+            }
+        }
+
+        function loadSample(text) {
+            document.getElementById('textInput').value = text;
+            analyzeText();
+        }
+
+        // Analyze on page load
+        window.onload = function() {
+            analyzeText();
+            loadDataset();
+        };
+
+        // Dataset loading and display
+        let trainData = [];
+        let testData = [];
+
+        function highlightEntities(text, entities) {
+            if (!entities || entities.length === 0) return text;
+            
+            // Sort entities by start position (reverse to avoid index shifting)
+            const sortedEntities = [...entities].sort((a, b) => b.start - a.start);
+            let highlighted = text;
+            
+            for (const entity of sortedEntities) {
+                const before = highlighted.substring(0, entity.start);
+                const after = highlighted.substring(entity.end);
+                const entityText = highlighted.substring(entity.start, entity.end);
+                const highlightedEntity = `<span class="entity entity-${entity.label}" title="${entity.label}">${entityText}</span>`;
+                highlighted = before + highlightedEntity + after;
+            }
+            
+            return highlighted;
+        }
+
+        function loadDataset() {
+            // Load training data
+            fetch('dataset/train.json')
+                .then(response => response.json())
+                .then(data => {
+                    trainData = data;
+                    displayDataset('train', data);
+                    updateStats('train', data);
+                })
+                .catch(error => {
+                    console.error('Error loading training data:', error);
+                    document.getElementById('trainSamples').innerHTML = '<p style="color: red;">Error loading training data. Please ensure dataset/train.json exists.</p>';
+                });
+
+            // Load test data
+            fetch('dataset/test.json')
+                .then(response => response.json())
+                .then(data => {
+                    testData = data;
+                    displayDataset('test', data);
+                    updateStats('test', data);
+                })
+                .catch(error => {
+                    console.error('Error loading test data:', error);
+                    document.getElementById('testSamples').innerHTML = '<p style="color: red;">Error loading test data. Please ensure dataset/test.json exists.</p>';
+                });
+        }
+
+        function displayDataset(type, data) {
+            const container = document.getElementById(type + 'Samples');
+            if (!container) return;
+
+            let html = '';
+            data.forEach((sample, index) => {
+                const highlighted = highlightEntities(sample.text, sample.entities);
+                const entityList = sample.entities.map(e => 
+                    `<span class="entity entity-${e.label}" title="${e.label}">${e.text}</span>`
+                ).join(' ');
+
+                html += `
+                    <div class="data-sample" data-index="${index}">
+                        <div class="data-sample-header">
+                            <span class="data-sample-id">Sample #${sample.id || index + 1}</span>
+                            <span style="color: #666; font-size: 0.9em;">${sample.entities.length} entities</span>
+                        </div>
+                        <div class="data-sample-text">${highlighted}</div>
+                        <div class="data-sample-entities">
+                            <strong>Entities:</strong> ${entityList || 'None'}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function updateStats(type, data) {
+            const statsContainer = document.getElementById(type + 'Stats');
+            if (!statsContainer) return;
+
+            const totalSamples = data.length;
+            const totalEntities = data.reduce((sum, sample) => sum + (sample.entities?.length || 0), 0);
+            const entityTypes = {};
+            
+            data.forEach(sample => {
+                sample.entities?.forEach(entity => {
+                    entityTypes[entity.label] = (entityTypes[entity.label] || 0) + 1;
+                });
+            });
+
+            const uniqueTypes = Object.keys(entityTypes).length;
+
+            statsContainer.innerHTML = `
+                <div class="data-stat-item">
+                    <h4>${totalSamples}</h4>
+                    <p>Total Samples</p>
+                </div>
+                <div class="data-stat-item">
+                    <h4>${totalEntities}</h4>
+                    <p>Total Entities</p>
+                </div>
+                <div class="data-stat-item">
+                    <h4>${uniqueTypes}</h4>
+                    <p>Entity Types</p>
+                </div>
+                <div class="data-stat-item">
+                    <h4>${(totalEntities / totalSamples).toFixed(1)}</h4>
+                    <p>Avg per Sample</p>
+                </div>
+            `;
+        }
+
+        function showDataset(type, element) {
+            // Update tabs
+            document.querySelectorAll('.dataset-tab').forEach(tab => tab.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');
+            } else {
+                // Fallback: find the clicked button
+                const buttons = document.querySelectorAll('.dataset-tab');
+                buttons.forEach(btn => {
+                    if (btn.textContent.includes(type === 'train' ? 'Training' : 'Test')) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+
+            // Update content
+            document.querySelectorAll('.dataset-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(type + 'Data').classList.add('active');
+        }
+
+        function filterData(type, searchTerm) {
+            const data = type === 'train' ? trainData : testData;
+            if (!data) return;
+
+            const filtered = data.filter(sample => {
+                const text = sample.text.toLowerCase();
+                const search = searchTerm.toLowerCase();
+                return text.includes(search) || 
+                       sample.entities.some(e => e.text.toLowerCase().includes(search) || e.label.toLowerCase().includes(search));
+            });
+
+            displayDataset(type, filtered);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "text": "IBM was founded in Armonk, New York in 1911.",
+    "entities": [
+      {"text": "IBM", "label": "ORG", "start": 0, "end": 3},
+      {"text": "Armonk, New York", "label": "LOC", "start": 20, "end": 35},
+      {"text": "1911", "label": "DATE", "start": 39, "end": 43}
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Reed Hastings is the co-founder of Netflix.",
+    "entities": [
+      {"text": "Reed Hastings", "label": "PERSON", "start": 0, "end": 13},
+      {"text": "Netflix", "label": "ORG", "start": 33, "end": 40}
+    ]
+  },
+  {
+    "id": 3,
+    "text": "The summit will take place in Tokyo, Japan in May 2024.",
+    "entities": [
+      {"text": "Tokyo, Japan", "label": "LOC", "start": 28, "end": 40},
+      {"text": "May 2024", "label": "DATE", "start": 44, "end": 52}
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Oracle Corporation is based in Austin, Texas.",
+    "entities": [
+      {"text": "Oracle Corporation", "label": "ORG", "start": 0, "end": 15},
+      {"text": "Austin, Texas", "label": "LOC", "start": 29, "end": 41}
+    ]
+  },
+  {
+    "id": 5,
+    "text": "Jack Ma founded Alibaba Group in Hangzhou, China in 1999.",
+    "entities": [
+      {"text": "Jack Ma", "label": "PERSON", "start": 0, "end": 7},
+      {"text": "Alibaba Group", "label": "ORG", "start": 15, "end": 28},
+      {"text": "Hangzhou, China", "label": "LOC", "start": 32, "end": 47},
+      {"text": "1999", "label": "DATE", "start": 51, "end": 55}
+    ]
+  },
+  {
+    "id": 6,
+    "text": "The Federal Reserve is located in Washington, D.C.",
+    "entities": [
+      {"text": "Federal Reserve", "label": "ORG", "start": 4, "end": 18},
+      {"text": "Washington, D.C.", "label": "LOC", "start": 34, "end": 48}
+    ]
+  },
+  {
+    "id": 7,
+    "text": "Adobe Systems was founded in Mountain View, California.",
+    "entities": [
+      {"text": "Adobe Systems", "label": "ORG", "start": 0, "end": 12},
+      {"text": "Mountain View, California", "label": "LOC", "start": 30, "end": 52}
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Sheryl Sandberg was the COO of Facebook.",
+    "entities": [
+      {"text": "Sheryl Sandberg", "label": "PERSON", "start": 0, "end": 14},
+      {"text": "Facebook", "label": "ORG", "start": 32, "end": 40}
+    ]
+  },
+  {
+    "id": 9,
+    "text": "The conference is scheduled for London, UK on June 10, 2024.",
+    "entities": [
+      {"text": "London, UK", "label": "LOC", "start": 33, "end": 42},
+      {"text": "June 10, 2024", "label": "DATE", "start": 46, "end": 59}
+    ]
+  },
+  {
+    "id": 10,
+    "text": "Salesforce is headquartered in San Francisco, California.",
+    "entities": [
+      {"text": "Salesforce", "label": "ORG", "start": 0, "end": 10},
+      {"text": "San Francisco, California", "label": "LOC", "start": 30, "end": 52}
+    ]
+  },
+  {
+    "id": 11,
+    "text": "Intel Corporation was founded in Santa Clara, California in 1968.",
+    "entities": [
+      {"text": "Intel Corporation", "label": "ORG", "start": 0, "end": 15},
+      {"text": "Santa Clara, California", "label": "LOC", "start": 33, "end": 55},
+      {"text": "1968", "label": "DATE", "start": 59, "end": 63}
+    ]
+  },
+  {
+    "id": 12,
+    "text": "Uber was founded in San Francisco in 2009.",
+    "entities": [
+      {"text": "Uber", "label": "ORG", "start": 0, "end": 4},
+      {"text": "San Francisco", "label": "LOC", "start": 20, "end": 32},
+      {"text": "2009", "label": "DATE", "start": 36, "end": 40}
+    ]
+  },
+  {
+    "id": 13,
+    "text": "The World Health Organization is based in Geneva, Switzerland.",
+    "entities": [
+      {"text": "World Health Organization", "label": "ORG", "start": 4, "end": 28},
+      {"text": "Geneva, Switzerland", "label": "LOC", "start": 37, "end": 57}
+    ]
+  },
+  {
+    "id": 14,
+    "text": "Airbnb was founded in San Francisco in 2008.",
+    "entities": [
+      {"text": "Airbnb", "label": "ORG", "start": 0, "end": 6},
+      {"text": "San Francisco", "label": "LOC", "start": 22, "end": 34},
+      {"text": "2008", "label": "DATE", "start": 38, "end": 42}
+    ]
+  },
+  {
+    "id": 15,
+    "text": "Zoom was founded by Eric Yuan in San Jose, California in 2011.",
+    "entities": [
+      {"text": "Zoom", "label": "ORG", "start": 0, "end": 4},
+      {"text": "Eric Yuan", "label": "PERSON", "start": 20, "end": 29},
+      {"text": "San Jose, California", "label": "LOC", "start": 33, "end": 52},
+      {"text": "2011", "label": "DATE", "start": 56, "end": 60}
+    ]
+  },
+  {
+    "id": 16,
+    "text": "Spotify is headquartered in Stockholm, Sweden.",
+    "entities": [
+      {"text": "Spotify", "label": "ORG", "start": 0, "end": 7},
+      {"text": "Stockholm, Sweden", "label": "LOC", "start": 28, "end": 44}
+    ]
+  },
+  {
+    "id": 17,
+    "text": "The meeting will be held in Berlin, Germany on September 5, 2024.",
+    "entities": [
+      {"text": "Berlin, Germany", "label": "LOC", "start": 28, "end": 42},
+      {"text": "September 5, 2024", "label": "DATE", "start": 46, "end": 63}
+    ]
+  },
+  {
+    "id": 18,
+    "text": "LinkedIn was acquired by Microsoft in 2016.",
+    "entities": [
+      {"text": "LinkedIn", "label": "ORG", "start": 0, "end": 7},
+      {"text": "Microsoft", "label": "ORG", "start": 25, "end": 34},
+      {"text": "2016", "label": "DATE", "start": 38, "end": 42}
+    ]
+  },
+  {
+    "id": 19,
+    "text": "Palantir Technologies is based in Denver, Colorado.",
+    "entities": [
+      {"text": "Palantir Technologies", "label": "ORG", "start": 0, "end": 18},
+      {"text": "Denver, Colorado", "label": "LOC", "start": 28, "end": 43}
+    ]
+  },
+  {
+    "id": 20,
+    "text": "Dropbox was founded in San Francisco in 2007.",
+    "entities": [
+      {"text": "Dropbox", "label": "ORG", "start": 0, "end": 7},
+      {"text": "San Francisco", "label": "LOC", "start": 23, "end": 35},
+      {"text": "2007", "label": "DATE", "start": 39, "end": 43}
+    ]
+  },
+  {
+    "id": 21,
+    "text": "The company raised $100 million in Series A funding.",
+    "entities": [
+      {"text": "$100 million", "label": "MONEY", "start": 18, "end": 31}
+    ]
+  },
+  {
+    "id": 22,
+    "text": "Narendra Modi is the Prime Minister of India since 2014.",
+    "entities": [
+      {"text": "Narendra Modi", "label": "PERSON", "start": 0, "end": 13},
+      {"text": "India", "label": "LOC", "start": 42, "end": 47},
+      {"text": "2014", "label": "DATE", "start": 54, "end": 58}
+    ]
+  },
+  {
+    "id": 23,
+    "text": "The market share increased by 22.5% compared to last year.",
+    "entities": [
+      {"text": "22.5%", "label": "PERCENT", "start": 30, "end": 35}
+    ]
+  },
+  {
+    "id": 24,
+    "text": "Sony Corporation is based in Tokyo, Japan.",
+    "entities": [
+      {"text": "Sony Corporation", "label": "ORG", "start": 0, "end": 16},
+      {"text": "Tokyo, Japan", "label": "LOC", "start": 30, "end": 42}
+    ]
+  },
+  {
+    "id": 25,
+    "text": "The acquisition was completed for $3.2 billion USD in November 2023.",
+    "entities": [
+      {"text": "$3.2 billion USD", "label": "MONEY", "start": 33, "end": 49},
+      {"text": "November 2023", "label": "DATE", "start": 53, "end": 66}
+    ]
+  },
+  {
+    "id": 26,
+    "text": "Justin Trudeau serves as Prime Minister of Canada.",
+    "entities": [
+      {"text": "Justin Trudeau", "label": "PERSON", "start": 0, "end": 14},
+      {"text": "Canada", "label": "LOC", "start": 45, "end": 51}
+    ]
+  },
+  {
+    "id": 27,
+    "text": "The tax rate was reduced to 18.5% effective January 1, 2024.",
+    "entities": [
+      {"text": "18.5%", "label": "PERCENT", "start": 26, "end": 31},
+      {"text": "January 1, 2024", "label": "DATE", "start": 42, "end": 57}
+    ]
+  },
+  {
+    "id": 28,
+    "text": "BMW Group is headquartered in Munich, Germany.",
+    "entities": [
+      {"text": "BMW Group", "label": "ORG", "start": 0, "end": 9},
+      {"text": "Munich, Germany", "label": "LOC", "start": 33, "end": 49}
+    ]
+  },
+  {
+    "id": 29,
+    "text": "The project cost $850,000 and was finished in August 2023.",
+    "entities": [
+      {"text": "$850,000", "label": "MONEY", "start": 18, "end": 27},
+      {"text": "August 2023", "label": "DATE", "start": 50, "end": 61}
+    ]
+  },
+  {
+    "id": 30,
+    "text": "Jair Bolsonaro was the President of Brazil from 2019 to 2022.",
+    "entities": [
+      {"text": "Jair Bolsonaro", "label": "PERSON", "start": 0, "end": 14},
+      {"text": "Brazil", "label": "LOC", "start": 36, "end": 42},
+      {"text": "2019", "label": "DATE", "start": 48, "end": 52},
+      {"text": "2022", "label": "DATE", "start": 56, "end": 60}
+    ]
+  }
+]
+

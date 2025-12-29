@@ -1,0 +1,314 @@
+# Named Entity Recognition Dataset - BIO Format
+# Project: Named Entity Recognition Dataset
+# Author: RSK World
+# Website: https://rskworld.in
+# Email: help@rskworld.in
+# Phone: +91 93305 39277
+# Format: Each line contains word and its BIO tag, sentences separated by blank line
+
+Apple B-ORG
+Inc. I-ORG
+was O
+founded O
+by O
+Steve B-PERSON
+Jobs I-PERSON
+in O
+Cupertino B-LOC
+, I-LOC
+California I-LOC
+on O
+April B-DATE
+1 I-DATE
+, I-DATE
+1976 I-DATE
+. O
+
+Microsoft B-ORG
+Corporation I-ORG
+is O
+headquartered O
+in O
+Redmond B-LOC
+, I-LOC
+Washington I-LOC
+. O
+
+Elon B-PERSON
+Musk I-PERSON
+is O
+the O
+CEO O
+of O
+Tesla B-ORG
+and O
+SpaceX B-ORG
+. O
+
+The O
+conference O
+will O
+be O
+held O
+in O
+New B-LOC
+York I-LOC
+on O
+March B-DATE
+15 I-DATE
+, I-DATE
+2024 I-DATE
+. O
+
+Amazon B-ORG
+Web I-ORG
+Services I-ORG
+was O
+launched O
+in O
+2006 B-DATE
+. O
+
+Barack B-PERSON
+Obama I-PERSON
+was O
+the O
+44th O
+President O
+of O
+the O
+United B-LOC
+States I-LOC
+. O
+
+Google B-ORG
+was O
+founded O
+in O
+Menlo B-LOC
+Park I-LOC
+, I-LOC
+California I-LOC
+in O
+1998 B-DATE
+. O
+
+Tim B-PERSON
+Cook I-PERSON
+became O
+CEO O
+of O
+Apple B-ORG
+in O
+2011 B-DATE
+. O
+
+The O
+United B-ORG
+Nations I-ORG
+is O
+located O
+in O
+New B-LOC
+York I-LOC
+City I-LOC
+. O
+
+Mark B-PERSON
+Zuckerberg I-PERSON
+founded O
+Facebook B-ORG
+in O
+2004 B-DATE
+. O
+
+NASA B-ORG
+launched O
+the O
+Mars O
+rover O
+in O
+July B-DATE
+2020 I-DATE
+. O
+
+The O
+World B-ORG
+Bank I-ORG
+is O
+based O
+in O
+Washington B-LOC
+, I-LOC
+D.C. I-LOC
+. O
+
+Satya B-PERSON
+Nadella I-PERSON
+is O
+the O
+CEO O
+of O
+Microsoft B-ORG
+. O
+
+Amazon B-ORG
+was O
+founded O
+by O
+Jeff B-PERSON
+Bezos I-PERSON
+in O
+Seattle B-LOC
+. O
+
+The O
+iPhone O
+was O
+announced O
+by O
+Apple B-ORG
+on O
+January B-DATE
+9 I-DATE
+, I-DATE
+2007 I-DATE
+. O
+
+Netflix B-ORG
+was O
+founded O
+in O
+Los B-LOC
+Gatos I-LOC
+, I-LOC
+California I-LOC
+in O
+1997 B-DATE
+. O
+
+Warren B-PERSON
+Buffett I-PERSON
+is O
+the O
+chairman O
+of O
+Berkshire B-ORG
+Hathaway I-ORG
+. O
+
+The O
+Olympics O
+will O
+be O
+held O
+in O
+Paris B-LOC
+in O
+2024 B-DATE
+. O
+
+Bill B-PERSON
+Gates I-PERSON
+co-founded O
+Microsoft B-ORG
+in O
+1975 B-DATE
+. O
+
+Twitter B-ORG
+was O
+acquired O
+by O
+Elon B-PERSON
+Musk I-PERSON
+in O
+October B-DATE
+2022 I-DATE
+. O
+
+The O
+European B-ORG
+Union I-ORG
+is O
+headquartered O
+in O
+Brussels B-LOC
+. O
+
+Sundar B-PERSON
+Pichai I-PERSON
+is O
+the O
+CEO O
+of O
+Google B-ORG
+and O
+Alphabet B-ORG
+. O
+
+The O
+company O
+moved O
+its O
+headquarters O
+to O
+Austin B-LOC
+, I-LOC
+Texas I-LOC
+in O
+2021 B-DATE
+. O
+
+Meta B-ORG
+Platforms I-ORG
+was O
+rebranded O
+from O
+Facebook B-ORG
+in O
+October B-DATE
+2021 I-DATE
+. O
+
+Jensen B-PERSON
+Huang I-PERSON
+is O
+the O
+founder O
+of O
+NVIDIA B-ORG
+. O
+
+The O
+headquarters O
+is O
+located O
+in O
+San B-LOC
+Francisco I-LOC
+, I-LOC
+California I-LOC
+. O
+
+OpenAI B-ORG
+was O
+founded O
+in O
+San B-LOC
+Francisco I-LOC
+in O
+2015 B-DATE
+. O
+
+Larry B-PERSON
+Page I-PERSON
+and O
+Sergey B-PERSON
+Brin I-PERSON
+founded O
+Google B-ORG
+in O
+1998 B-DATE
+. O
+

@@ -1,0 +1,423 @@
+[
+  {
+    "id": 1,
+    "text": "Apple Inc. was founded by Steve Jobs in Cupertino, California on April 1, 1976.",
+    "entities": [
+      {"text": "Apple Inc.", "label": "ORG", "start": 0, "end": 9},
+      {"text": "Steve Jobs", "label": "PERSON", "start": 30, "end": 40},
+      {"text": "Cupertino, California", "label": "LOC", "start": 44, "end": 62},
+      {"text": "April 1, 1976", "label": "DATE", "start": 66, "end": 79}
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Microsoft Corporation is headquartered in Redmond, Washington.",
+    "entities": [
+      {"text": "Microsoft Corporation", "label": "ORG", "start": 0, "end": 22},
+      {"text": "Redmond, Washington", "label": "LOC", "start": 47, "end": 67}
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Elon Musk is the CEO of Tesla and SpaceX.",
+    "entities": [
+      {"text": "Elon Musk", "label": "PERSON", "start": 0, "end": 9},
+      {"text": "Tesla", "label": "ORG", "start": 23, "end": 28},
+      {"text": "SpaceX", "label": "ORG", "start": 33, "end": 39}
+    ]
+  },
+  {
+    "id": 4,
+    "text": "The conference will be held in New York on March 15, 2024.",
+    "entities": [
+      {"text": "New York", "label": "LOC", "start": 32, "end": 40},
+      {"text": "March 15, 2024", "label": "DATE", "start": 44, "end": 57}
+    ]
+  },
+  {
+    "id": 5,
+    "text": "Amazon Web Services was launched in 2006.",
+    "entities": [
+      {"text": "Amazon Web Services", "label": "ORG", "start": 0, "end": 20},
+      {"text": "2006", "label": "DATE", "start": 42, "end": 46}
+    ]
+  },
+  {
+    "id": 6,
+    "text": "Barack Obama was the 44th President of the United States.",
+    "entities": [
+      {"text": "Barack Obama", "label": "PERSON", "start": 0, "end": 12},
+      {"text": "United States", "label": "LOC", "start": 42, "end": 59}
+    ]
+  },
+  {
+    "id": 7,
+    "text": "Google was founded in Menlo Park, California in 1998.",
+    "entities": [
+      {"text": "Google", "label": "ORG", "start": 0, "end": 6},
+      {"text": "Menlo Park, California", "label": "LOC", "start": 22, "end": 45},
+      {"text": "1998", "label": "DATE", "start": 49, "end": 53}
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Tim Cook became CEO of Apple in 2011.",
+    "entities": [
+      {"text": "Tim Cook", "label": "PERSON", "start": 0, "end": 8},
+      {"text": "Apple", "label": "ORG", "start": 20, "end": 25},
+      {"text": "2011", "label": "DATE", "start": 29, "end": 33}
+    ]
+  },
+  {
+    "id": 9,
+    "text": "The United Nations is located in New York City.",
+    "entities": [
+      {"text": "United Nations", "label": "ORG", "start": 4, "end": 19},
+      {"text": "New York City", "label": "LOC", "start": 36, "end": 49}
+    ]
+  },
+  {
+    "id": 10,
+    "text": "Mark Zuckerberg founded Facebook in 2004.",
+    "entities": [
+      {"text": "Mark Zuckerberg", "label": "PERSON", "start": 0, "end": 14},
+      {"text": "Facebook", "label": "ORG", "start": 23, "end": 31},
+      {"text": "2004", "label": "DATE", "start": 35, "end": 39}
+    ]
+  },
+  {
+    "id": 11,
+    "text": "NASA launched the Mars rover in July 2020.",
+    "entities": [
+      {"text": "NASA", "label": "ORG", "start": 0, "end": 4},
+      {"text": "July 2020", "label": "DATE", "start": 30, "end": 39}
+    ]
+  },
+  {
+    "id": 12,
+    "text": "The World Bank is based in Washington, D.C.",
+    "entities": [
+      {"text": "World Bank", "label": "ORG", "start": 4, "end": 15},
+      {"text": "Washington, D.C.", "label": "LOC", "start": 29, "end": 43}
+    ]
+  },
+  {
+    "id": 13,
+    "text": "Satya Nadella is the CEO of Microsoft.",
+    "entities": [
+      {"text": "Satya Nadella", "label": "PERSON", "start": 0, "end": 13},
+      {"text": "Microsoft", "label": "ORG", "start": 27, "end": 36}
+    ]
+  },
+  {
+    "id": 14,
+    "text": "Amazon was founded by Jeff Bezos in Seattle.",
+    "entities": [
+      {"text": "Amazon", "label": "ORG", "start": 0, "end": 6},
+      {"text": "Jeff Bezos", "label": "PERSON", "start": 24, "end": 33},
+      {"text": "Seattle", "label": "LOC", "start": 37, "end": 44}
+    ]
+  },
+  {
+    "id": 15,
+    "text": "The iPhone was announced by Apple on January 9, 2007.",
+    "entities": [
+      {"text": "Apple", "label": "ORG", "start": 28, "end": 33},
+      {"text": "January 9, 2007", "label": "DATE", "start": 37, "end": 52}
+    ]
+  },
+  {
+    "id": 16,
+    "text": "Netflix was founded in Los Gatos, California in 1997.",
+    "entities": [
+      {"text": "Netflix", "label": "ORG", "start": 0, "end": 7},
+      {"text": "Los Gatos, California", "label": "LOC", "start": 25, "end": 45},
+      {"text": "1997", "label": "DATE", "start": 49, "end": 53}
+    ]
+  },
+  {
+    "id": 17,
+    "text": "Warren Buffett is the chairman of Berkshire Hathaway.",
+    "entities": [
+      {"text": "Warren Buffett", "label": "PERSON", "start": 0, "end": 13},
+      {"text": "Berkshire Hathaway", "label": "ORG", "start": 35, "end": 54}
+    ]
+  },
+  {
+    "id": 18,
+    "text": "The Olympics will be held in Paris in 2024.",
+    "entities": [
+      {"text": "Paris", "label": "LOC", "start": 27, "end": 32},
+      {"text": "2024", "label": "DATE", "start": 36, "end": 40}
+    ]
+  },
+  {
+    "id": 19,
+    "text": "Bill Gates co-founded Microsoft in 1975.",
+    "entities": [
+      {"text": "Bill Gates", "label": "PERSON", "start": 0, "end": 9},
+      {"text": "Microsoft", "label": "ORG", "start": 22, "end": 31},
+      {"text": "1975", "label": "DATE", "start": 35, "end": 39}
+    ]
+  },
+  {
+    "id": 20,
+    "text": "Twitter was acquired by Elon Musk in October 2022.",
+    "entities": [
+      {"text": "Twitter", "label": "ORG", "start": 0, "end": 7},
+      {"text": "Elon Musk", "label": "PERSON", "start": 25, "end": 34},
+      {"text": "October 2022", "label": "DATE", "start": 38, "end": 50}
+    ]
+  },
+  {
+    "id": 21,
+    "text": "The European Union is headquartered in Brussels.",
+    "entities": [
+      {"text": "European Union", "label": "ORG", "start": 4, "end": 18},
+      {"text": "Brussels", "label": "LOC", "start": 45, "end": 53}
+    ]
+  },
+  {
+    "id": 22,
+    "text": "Sundar Pichai is the CEO of Google and Alphabet.",
+    "entities": [
+      {"text": "Sundar Pichai", "label": "PERSON", "start": 0, "end": 12},
+      {"text": "Google", "label": "ORG", "start": 26, "end": 32},
+      {"text": "Alphabet", "label": "ORG", "start": 37, "end": 45}
+    ]
+  },
+  {
+    "id": 23,
+    "text": "The company moved its headquarters to Austin, Texas in 2021.",
+    "entities": [
+      {"text": "Austin, Texas", "label": "LOC", "start": 40, "end": 52},
+      {"text": "2021", "label": "DATE", "start": 56, "end": 60}
+    ]
+  },
+  {
+    "id": 24,
+    "text": "Meta Platforms was rebranded from Facebook in October 2021.",
+    "entities": [
+      {"text": "Meta Platforms", "label": "ORG", "start": 0, "end": 13},
+      {"text": "Facebook", "label": "ORG", "start": 33, "end": 41},
+      {"text": "October 2021", "label": "DATE", "start": 45, "end": 58}
+    ]
+  },
+  {
+    "id": 25,
+    "text": "Jensen Huang is the founder of NVIDIA.",
+    "entities": [
+      {"text": "Jensen Huang", "label": "PERSON", "start": 0, "end": 12},
+      {"text": "NVIDIA", "label": "ORG", "start": 30, "end": 35}
+    ]
+  },
+  {
+    "id": 26,
+    "text": "The headquarters is located in San Francisco, California.",
+    "entities": [
+      {"text": "San Francisco, California", "label": "LOC", "start": 30, "end": 55}
+    ]
+  },
+  {
+    "id": 27,
+    "text": "OpenAI was founded in San Francisco in 2015.",
+    "entities": [
+      {"text": "OpenAI", "label": "ORG", "start": 0, "end": 6},
+      {"text": "San Francisco", "label": "LOC", "start": 25, "end": 37},
+      {"text": "2015", "label": "DATE", "start": 41, "end": 45}
+    ]
+  },
+  {
+    "id": 28,
+    "text": "Larry Page and Sergey Brin founded Google in 1998.",
+    "entities": [
+      {"text": "Larry Page", "label": "PERSON", "start": 0, "end": 9},
+      {"text": "Sergey Brin", "label": "PERSON", "start": 14, "end": 25},
+      {"text": "Google", "label": "ORG", "start": 33, "end": 39},
+      {"text": "1998", "label": "DATE", "start": 43, "end": 47}
+    ]
+  },
+  {
+    "id": 29,
+    "text": "Samsung Electronics is headquartered in Seoul, South Korea.",
+    "entities": [
+      {"text": "Samsung Electronics", "label": "ORG", "start": 0, "end": 20},
+      {"text": "Seoul, South Korea", "label": "LOC", "start": 45, "end": 62}
+    ]
+  },
+  {
+    "id": 30,
+    "text": "The company reported revenue of $50 million in Q3 2023.",
+    "entities": [
+      {"text": "$50 million", "label": "MONEY", "start": 30, "end": 42},
+      {"text": "Q3 2023", "label": "DATE", "start": 46, "end": 53}
+    ]
+  },
+  {
+    "id": 31,
+    "text": "Taylor Swift performed at Madison Square Garden in New York on December 15, 2023.",
+    "entities": [
+      {"text": "Taylor Swift", "label": "PERSON", "start": 0, "end": 12},
+      {"text": "Madison Square Garden", "label": "LOC", "start": 25, "end": 45},
+      {"text": "New York", "label": "LOC", "start": 49, "end": 57},
+      {"text": "December 15, 2023", "label": "DATE", "start": 61, "end": 77}
+    ]
+  },
+  {
+    "id": 32,
+    "text": "The stock price increased by 15% this quarter.",
+    "entities": [
+      {"text": "15%", "label": "PERCENT", "start": 30, "end": 33}
+    ]
+  },
+  {
+    "id": 33,
+    "text": "Amazon Prime Video launched in India on September 5, 2016.",
+    "entities": [
+      {"text": "Amazon Prime Video", "label": "ORG", "start": 0, "end": 19},
+      {"text": "India", "label": "LOC", "start": 26, "end": 31},
+      {"text": "September 5, 2016", "label": "DATE", "start": 35, "end": 52}
+    ]
+  },
+  {
+    "id": 34,
+    "text": "The project budget is $2.5 billion over the next five years.",
+    "entities": [
+      {"text": "$2.5 billion", "label": "MONEY", "start": 20, "end": 32}
+    ]
+  },
+  {
+    "id": 35,
+    "text": "Angela Merkel served as Chancellor of Germany from 2005 to 2021.",
+    "entities": [
+      {"text": "Angela Merkel", "label": "PERSON", "start": 0, "end": 13},
+      {"text": "Germany", "label": "LOC", "start": 35, "end": 42},
+      {"text": "2005", "label": "DATE", "start": 48, "end": 52},
+      {"text": "2021", "label": "DATE", "start": 56, "end": 60}
+    ]
+  },
+  {
+    "id": 36,
+    "text": "The inflation rate rose to 8.5% in March 2023.",
+    "entities": [
+      {"text": "8.5%", "label": "PERCENT", "start": 26, "end": 30},
+      {"text": "March 2023", "label": "DATE", "start": 34, "end": 44}
+    ]
+  },
+  {
+    "id": 37,
+    "text": "Disney announced a new theme park in Shanghai, China opening in 2025.",
+    "entities": [
+      {"text": "Disney", "label": "ORG", "start": 0, "end": 6},
+      {"text": "Shanghai, China", "label": "LOC", "start": 33, "end": 48},
+      {"text": "2025", "label": "DATE", "start": 57, "end": 61}
+    ]
+  },
+  {
+    "id": 38,
+    "text": "The contract is worth $500,000 and will be completed by June 2024.",
+    "entities": [
+      {"text": "$500,000", "label": "MONEY", "start": 20, "end": 29},
+      {"text": "June 2024", "label": "DATE", "start": 60, "end": 69}
+    ]
+  },
+  {
+    "id": 39,
+    "text": "Vladimir Putin is the President of Russia since 2012.",
+    "entities": [
+      {"text": "Vladimir Putin", "label": "PERSON", "start": 0, "end": 14},
+      {"text": "Russia", "label": "LOC", "start": 36, "end": 42},
+      {"text": "2012", "label": "DATE", "start": 49, "end": 53}
+    ]
+  },
+  {
+    "id": 40,
+    "text": "The company's profit margin increased by 12.3% last year.",
+    "entities": [
+      {"text": "12.3%", "label": "PERCENT", "start": 42, "end": 47}
+    ]
+  },
+  {
+    "id": 41,
+    "text": "Coca-Cola Company was founded in Atlanta, Georgia in 1892.",
+    "entities": [
+      {"text": "Coca-Cola Company", "label": "ORG", "start": 0, "end": 17},
+      {"text": "Atlanta, Georgia", "label": "LOC", "start": 35, "end": 51},
+      {"text": "1892", "label": "DATE", "start": 55, "end": 59}
+    ]
+  },
+  {
+    "id": 42,
+    "text": "The investment totaled $1.2 million USD in the first quarter.",
+    "entities": [
+      {"text": "$1.2 million USD", "label": "MONEY", "start": 19, "end": 36}
+    ]
+  },
+  {
+    "id": 43,
+    "text": "Xi Jinping is the General Secretary of the Communist Party of China.",
+    "entities": [
+      {"text": "Xi Jinping", "label": "PERSON", "start": 0, "end": 10},
+      {"text": "China", "label": "LOC", "start": 66, "end": 71}
+    ]
+  },
+  {
+    "id": 44,
+    "text": "The unemployment rate dropped to 3.8% in April 2024.",
+    "entities": [
+      {"text": "3.8%", "label": "PERCENT", "start": 32, "end": 36},
+      {"text": "April 2024", "label": "DATE", "start": 40, "end": 50}
+    ]
+  },
+  {
+    "id": 45,
+    "text": "Goldman Sachs is a major investment bank based in New York City.",
+    "entities": [
+      {"text": "Goldman Sachs", "label": "ORG", "start": 0, "end": 13},
+      {"text": "New York City", "label": "LOC", "start": 52, "end": 65}
+    ]
+  },
+  {
+    "id": 46,
+    "text": "The merger deal was valued at $75 billion dollars.",
+    "entities": [
+      {"text": "$75 billion dollars", "label": "MONEY", "start": 28, "end": 47}
+    ]
+  },
+  {
+    "id": 47,
+    "text": "Emmanuel Macron became President of France in May 2017.",
+    "entities": [
+      {"text": "Emmanuel Macron", "label": "PERSON", "start": 0, "end": 15},
+      {"text": "France", "label": "LOC", "start": 35, "end": 41},
+      {"text": "May 2017", "label": "DATE", "start": 45, "end": 53}
+    ]
+  },
+  {
+    "id": 48,
+    "text": "The interest rate was set at 4.25% by the Federal Reserve.",
+    "entities": [
+      {"text": "4.25%", "label": "PERCENT", "start": 28, "end": 33},
+      {"text": "Federal Reserve", "label": "ORG", "start": 40, "end": 55}
+    ]
+  },
+  {
+    "id": 49,
+    "text": "PayPal was acquired by eBay for $1.5 billion in 2002.",
+    "entities": [
+      {"text": "PayPal", "label": "ORG", "start": 0, "end": 6},
+      {"text": "eBay", "label": "ORG", "start": 25, "end": 29},
+      {"text": "$1.5 billion", "label": "MONEY", "start": 34, "end": 46},
+      {"text": "2002", "label": "DATE", "start": 50, "end": 54}
+    ]
+  },
+  {
+    "id": 50,
+    "text": "The GDP growth rate reached 5.7% in the third quarter of 2023.",
+    "entities": [
+      {"text": "5.7%", "label": "PERCENT", "start": 22, "end": 26},
+      {"text": "2023", "label": "DATE", "start": 58, "end": 62}
+    ]
+  }
+]
+

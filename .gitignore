@@ -1,0 +1,69 @@
+# Named Entity Recognition Dataset - Git Ignore
+# Project: Named Entity Recognition Dataset
+# Author: RSK World
+# Website: https://rskworld.in
+# Email: help@rskworld.in
+# Phone: +91 93305 39277
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Model files
+ner_model/
+*.pkl
+*.model
+*.h5
+
+# Data files (if too large)
+# dataset/*.csv
+# dataset/*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Visualization outputs
+*.png
+*.jpg
+*.html
+!demo.html
+!index.html
+
+# Jupyter Notebook
+.ipynb_checkpoints
+

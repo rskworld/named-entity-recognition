@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Project: Named Entity Recognition Dataset
+    Author: RSK World
+    Website: https://rskworld.in
+    Email: help@rskworld.in
+    Phone: +91 93305 39277
+    Description: Main landing page for Named Entity Recognition Dataset with animations
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Named Entity Recognition Dataset | RSK World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Scroll Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .header-top {
+            background: rgba(0,0,0,0.2);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .header-top .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .header-top a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .header-top a:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        .header-main {
+            padding: 30px 20px;
+            transition: padding 0.3s ease;
+        }
+
+        header.scrolled .header-main {
+            padding: 20px 20px;
+        }
+
+        .header-main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .logo i {
+            font-size: 2.5em;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover i {
+            transform: rotate(360deg);
+        }
+
+        .logo-text h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            animation: wave 20s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50px); }
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .features .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(5deg);
+            color: #764ba2;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .feature-card:hover h3 {
+            color: #667eea;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .stats .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .stat-card h3 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #fff, #4ECDC4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-card p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Chart Section */
+        .chart-section {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .chart-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+
+        /* Technologies Section */
+        .technologies {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, white 0%, #f8f9fa 100%);
+        }
+
+        .technologies .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .tech-badge {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #667eea;
+            border: 2px solid #667eea;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-badge::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: #667eea;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            z-index: 0;
+        }
+
+        .tech-badge span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-badge:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .tech-badge:hover {
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+
+        .use-cases .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .use-case-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-left: 4px solid #667eea;
+        }
+
+        .use-case-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .use-case-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .use-case-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .use-case-card ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+        }
+
+        .use-case-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 50px 20px 20px;
+            position: relative;
+        }
+
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #4ECDC4;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-section a:hover {
+            color: #4ECDC4;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #4ECDC4;
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .scroll-top.visible {
+            display: flex;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Dataset Display Section */
+        .dataset-section {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+
+        .dataset-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dataset-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            justify-content: center;
+        }
+
+        .dataset-tab {
+            padding: 15px 30px;
+            background: #f8f9fa;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .dataset-tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            background: white;
+        }
+
+        .dataset-tab:hover {
+            color: #667eea;
+        }
+
+        .dataset-content {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .dataset-content.active {
+            display: block;
+        }
+
+        .data-search {
+            margin-bottom: 20px;
+        }
+
+        .data-search input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .data-search input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .data-samples {
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .data-sample {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .data-sample:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .data-sample-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .data-sample-id {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .data-sample-entities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .data-sample-text {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .data-stats {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .data-stat-item {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            color: white;
+        }
+
+        .data-stat-item h4 {
+            font-size: 2em;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .data-stat-item p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9em;
+        }
+
+        .entity {
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin: 0 2px;
+            display: inline-block;
+        }
+
+        .entity-PERSON {
+            background-color: #FF6B6B;
+            color: white;
+        }
+
+        .entity-ORG {
+            background-color: #4ECDC4;
+            color: white;
+        }
+
+        .entity-LOC {
+            background-color: #45B7D1;
+            color: white;
+        }
+
+        .entity-DATE {
+            background-color: #FFA07A;
+            color: white;
+        }
+
+        .entity-MONEY {
+            background-color: #98D8C8;
+            color: #333;
+        }
+
+        .entity-PERCENT {
+            background-color: #F7DC6F;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2em;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .section-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-top">
+            <div class="container">
+                <div>
+                    <a href="mailto:help@rskworld.in"><i class="fas fa-envelope"></i> help@rskworld.in</a>
+                    <a href="tel:+919330539277"><i class="fas fa-phone"></i> +91 93305 39277</a>
+                </div>
+                <div>
+                    <a href="https://rskworld.in" target="_blank"><i class="fas fa-globe"></i> rskworld.in</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="logo-text">
+                        <h1>NER Dataset</h1>
+                        <p>Named Entity Recognition</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#dataset">Dataset</a></li>
+                        <li><a href="#technologies">Technologies</a></li>
+                        <li><a href="README.md">Documentation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="container">
+            <h2>Named Entity Recognition Dataset</h2>
+            <p>Comprehensive dataset with labeled entities for information extraction and NLP model training</p>
+            <div class="hero-buttons">
+                <a href="demo.html" class="btn btn-primary">
+                    <span><i class="fas fa-play"></i> Try Demo</span>
+                </a>
+                <a href="README.md" class="btn btn-secondary">
+                    <span><i class="fas fa-book"></i> Documentation</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Key Features</h2>
+            <p class="section-subtitle fade-in">Everything you need for Named Entity Recognition projects</p>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-tags"></i></div>
+                    <h3>Labeled Entities</h3>
+                    <p>Pre-labeled entities including persons, organizations, locations, dates, and more for immediate use in your projects.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Multiple Entity Types</h3>
+                    <p>Support for PERSON, ORG, LOC, DATE, MONEY, and PERCENT entity types with comprehensive coverage.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-code"></i></div>
+                    <h3>BIO Tagging Format</h3>
+                    <p>Includes BIO (Beginning-Inside-Outside) tagging format ready for sequence labeling models.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Training & Test Sets</h3>
+                    <p>Pre-split training and test datasets for immediate model training and evaluation.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Ready for NER Models</h3>
+                    <p>Compatible with spaCy, NLTK, Transformers, and other popular NLP frameworks.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-file-export"></i></div>
+                    <h3>Multiple Formats</h3>
+                    <p>Available in CSV, JSON, and BIO formats for maximum flexibility and compatibility.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-database"></i></div>
+                    <h3>Batch Processing</h3>
+                    <p>Advanced batch processing capabilities with parallel processing support for large datasets.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Comprehensive statistics and analytics tools for dataset analysis and quality assessment.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-server"></i></div>
+                    <h3>REST API</h3>
+                    <p>Built-in Flask API server for programmatic access to dataset and entity extraction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Dataset Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <h3 class="counter" data-target="50">0</h3>
+                    <p>Training Samples</p>
+                </div>
+                <div class="stat-card fade-in">
+                    <h3 class="counter" data-target="30">0</h3>
+                    <p>Test Samples</p>
+                </div>
+                <div class="stat-card fade-in">
+                    <h3 class="counter" data-target="6">0</h3>
+                    <p>Entity Types</p>
+                </div>
+                <div class="stat-card fade-in">
+                    <h3 class="counter" data-target="5">0</h3>
+                    <p>Data Formats</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chart Section -->
+    <section class="chart-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Entity Distribution</h2>
+            <p class="section-subtitle fade-in">Visual representation of entity types in the dataset</p>
+            <div class="chart-container fade-in">
+                <canvas id="entityChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="section-title fade-in">Use Cases</h2>
+            <p class="section-subtitle fade-in">Real-world applications of Named Entity Recognition</p>
+            <div class="use-cases-grid">
+                <div class="use-case-card slide-in-left">
+                    <h4><i class="fas fa-newspaper"></i> Information Extraction</h4>
+                    <ul>
+                        <li>Extract entities from news articles</li>
+                        <li>Identify key information in documents</li>
+                        <li>Automated content analysis</li>
+                    </ul>
+                </div>
+                <div class="use-case-card fade-in">
+                    <h4><i class="fas fa-search"></i> Search & Discovery</h4>
+                    <ul>
+                        <li>Enhanced search capabilities</li>
+                        <li>Semantic search implementation</li>
+                        <li>Content recommendation systems</li>
+                    </ul>
+                </div>
+                <div class="use-case-card slide-in-right">
+                    <h4><i class="fas fa-comments"></i> Chatbots & NLP</h4>
+                    <ul>
+                        <li>Conversational AI systems</li>
+                        <li>Intent recognition</li>
+                        <li>Context understanding</li>
+                    </ul>
+                </div>
+                <div class="use-case-card slide-in-left">
+                    <h4><i class="fas fa-shield-alt"></i> Security & Compliance</h4>
+                    <ul>
+                        <li>Data privacy protection</li>
+                        <li>Compliance monitoring</li>
+                        <li>Anonymization systems</li>
+                    </ul>
+                </div>
+                <div class="use-case-card fade-in">
+                    <h4><i class="fas fa-briefcase"></i> Business Intelligence</h4>
+                    <ul>
+                        <li>Competitor analysis</li>
+                        <li>Market research automation</li>
+                        <li>Customer data extraction</li>
+                    </ul>
+                </div>
+                <div class="use-case-card slide-in-right">
+                    <h4><i class="fas fa-graduation-cap"></i> Research & Education</h4>
+                    <ul>
+                        <li>Academic research tools</li>
+                        <li>Educational applications</li>
+                        <li>NLP model training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies" id="technologies">
+        <div class="container">
+            <h2 class="section-title fade-in">Technologies</h2>
+            <p class="section-subtitle fade-in">Compatible with popular NLP frameworks and tools</p>
+            <div class="tech-list">
+                <div class="tech-badge scale-in"><span>CSV</span></div>
+                <div class="tech-badge scale-in"><span>JSON</span></div>
+                <div class="tech-badge scale-in"><span>spaCy</span></div>
+                <div class="tech-badge scale-in"><span>NLTK</span></div>
+                <div class="tech-badge scale-in"><span>Transformers</span></div>
+                <div class="tech-badge scale-in"><span>PyTorch</span></div>
+                <div class="tech-badge scale-in"><span>TensorFlow</span></div>
+                <div class="tech-badge scale-in"><span>scikit-learn</span></div>
+                <div class="tech-badge scale-in"><span>Flask</span></div>
+                <div class="tech-badge scale-in"><span>Pandas</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dataset Display Section -->
+    <section class="dataset-section" id="dataset">
+        <div class="container">
+            <h2 class="section-title fade-in">Complete Dataset</h2>
+            <p class="section-subtitle fade-in">Browse all training and test samples with labeled entities</p>
+            
+            <div class="dataset-tabs">
+                <button class="dataset-tab active" onclick="showDataset('train', this)">
+                    <i class="fas fa-graduation-cap"></i> Training Data (50 samples)
+                </button>
+                <button class="dataset-tab" onclick="showDataset('test', this)">
+                    <i class="fas fa-vial"></i> Test Data (30 samples)
+                </button>
+            </div>
+
+            <div id="trainData" class="dataset-content active">
+                <div class="data-search">
+                    <input type="text" id="trainSearch" placeholder="Search training data..." onkeyup="filterData('train', this.value)">
+                </div>
+                <div id="trainStats" class="data-stats"></div>
+                <div id="trainSamples" class="data-samples"></div>
+            </div>
+
+            <div id="testData" class="dataset-content">
+                <div class="data-search">
+                    <input type="text" id="testSearch" placeholder="Search test data..." onkeyup="filterData('test', this.value)">
+                </div>
+                <div id="testStats" class="data-stats"></div>
+                <div id="testSamples" class="data-samples"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section fade-in">
+                    <h3>About</h3>
+                    <p>Named Entity Recognition Dataset for information extraction and NLP model training. Created by RSK World.</p>
+                    <div class="social-links">
+                        <a href="https://rskworld.in" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                        <a href="mailto:help@rskworld.in" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+919330539277" title="Phone"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section fade-in">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="README.md">Documentation</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section fade-in">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="dataset/train.json">Training Data</a></li>
+                        <li><a href="dataset/test.json">Test Data</a></li>
+                        <li><a href="scripts/">Scripts</a></li>
+                        <li><a href="requirements.txt">Requirements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section fade-in">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-globe"></i> <a href="https://rskworld.in" target="_blank">rskworld.in</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:help@rskworld.in">help@rskworld.in</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+919330539277">+91 93305 39277</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>RSK World</strong> - Free Programming Resources & Source Code. All rights reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">
+                    Licensed under <a href="LICENSE" style="color: #4ECDC4;">MIT License</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 5 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+            animatedElements.forEach(el => observer.observe(el));
+
+            createParticles();
+            initChart();
+            initCounters();
+            loadDataset();
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Animated counters
+        function initCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const count = parseInt(counter.innerText);
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                const counterObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && entry.target.innerText === '0') {
+                            updateCount();
+                            counterObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                counterObserver.observe(counter);
+            });
+        }
+
+        // Chart initialization
+        function initChart() {
+            const ctx = document.getElementById('entityChart');
+            if (!ctx) return;
+
+            const chartObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['PERSON', 'ORG', 'LOC', 'DATE', 'MONEY', 'PERCENT'],
+                                datasets: [{
+                                    label: 'Entity Count',
+                                    data: [45, 62, 38, 28, 12, 8],
+                                    backgroundColor: [
+                                        '#FF6B6B',
+                                        '#4ECDC4',
+                                        '#45B7D1',
+                                        '#FFA07A',
+                                        '#98D8C8',
+                                        '#F7DC6F'
+                                    ],
+                                    borderColor: [
+                                        '#FF6B6B',
+                                        '#4ECDC4',
+                                        '#45B7D1',
+                                        '#FFA07A',
+                                        '#98D8C8',
+                                        '#F7DC6F'
+                                    ],
+                                    borderWidth: 2,
+                                    borderRadius: 8
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Entity Type Distribution',
+                                        font: {
+                                            size: 18,
+                                            weight: 'bold'
+                                        }
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: {
+                                            stepSize: 10
+                                        }
+                                    }
+                                },
+                                animation: {
+                                    duration: 2000,
+                                    easing: 'easeInOutQuart'
+                                }
+                            }
+                        });
+                        chartObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            chartObserver.observe(ctx);
+        }
+
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Dataset loading and display
+        let trainData = [];
+        let testData = [];
+
+        function highlightEntities(text, entities) {
+            if (!entities || entities.length === 0) return text;
+            
+            // Sort entities by start position (reverse to avoid index shifting)
+            const sortedEntities = [...entities].sort((a, b) => b.start - a.start);
+            let highlighted = text;
+            
+            for (const entity of sortedEntities) {
+                const before = highlighted.substring(0, entity.start);
+                const after = highlighted.substring(entity.end);
+                const entityText = highlighted.substring(entity.start, entity.end);
+                const highlightedEntity = `<span class="entity entity-${entity.label}" title="${entity.label}">${entityText}</span>`;
+                highlighted = before + highlightedEntity + after;
+            }
+            
+            return highlighted;
+        }
+
+        function loadDataset() {
+            // Load training data
+            fetch('dataset/train.json')
+                .then(response => response.json())
+                .then(data => {
+                    trainData = data;
+                    displayDataset('train', data);
+                    updateStats('train', data);
+                })
+                .catch(error => {
+                    console.error('Error loading training data:', error);
+                    document.getElementById('trainSamples').innerHTML = '<p style="color: red;">Error loading training data. Please ensure dataset/train.json exists.</p>';
+                });
+
+            // Load test data
+            fetch('dataset/test.json')
+                .then(response => response.json())
+                .then(data => {
+                    testData = data;
+                    displayDataset('test', data);
+                    updateStats('test', data);
+                })
+                .catch(error => {
+                    console.error('Error loading test data:', error);
+                    document.getElementById('testSamples').innerHTML = '<p style="color: red;">Error loading test data. Please ensure dataset/test.json exists.</p>';
+                });
+        }
+
+        function displayDataset(type, data) {
+            const container = document.getElementById(type + 'Samples');
+            if (!container) return;
+
+            let html = '';
+            data.forEach((sample, index) => {
+                const highlighted = highlightEntities(sample.text, sample.entities);
+                const entityList = sample.entities.map(e => 
+                    `<span class="entity entity-${e.label}" title="${e.label}">${e.text}</span>`
+                ).join(' ');
+
+                html += `
+                    <div class="data-sample fade-in" data-index="${index}">
+                        <div class="data-sample-header">
+                            <span class="data-sample-id">Sample #${sample.id || index + 1}</span>
+                            <span style="color: #666; font-size: 0.9em;">${sample.entities.length} entities</span>
+                        </div>
+                        <div class="data-sample-text">${highlighted}</div>
+                        <div class="data-sample-entities">
+                            <strong>Entities:</strong> ${entityList || 'None'}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            
+            // Observe new elements for animation
+            container.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        function updateStats(type, data) {
+            const statsContainer = document.getElementById(type + 'Stats');
+            if (!statsContainer) return;
+
+            const totalSamples = data.length;
+            const totalEntities = data.reduce((sum, sample) => sum + (sample.entities?.length || 0), 0);
+            const entityTypes = {};
+            
+            data.forEach(sample => {
+                sample.entities?.forEach(entity => {
+                    entityTypes[entity.label] = (entityTypes[entity.label] || 0) + 1;
+                });
+            });
+
+            const uniqueTypes = Object.keys(entityTypes).length;
+
+            statsContainer.innerHTML = `
+                <div class="data-stat-item">
+                    <h4>${totalSamples}</h4>
+                    <p>Total Samples</p>
+                </div>
+                <div class="data-stat-item">
+                    <h4>${totalEntities}</h4>
+                    <p>Total Entities</p>
+                </div>
+                <div class="data-stat-item">
+                    <h4>${uniqueTypes}</h4>
+                    <p>Entity Types</p>
+                </div>
+                <div class="data-stat-item">
+                    <h4>${(totalEntities / totalSamples).toFixed(1)}</h4>
+                    <p>Avg per Sample</p>
+                </div>
+            `;
+        }
+
+        function showDataset(type, element) {
+            // Update tabs
+            document.querySelectorAll('.dataset-tab').forEach(tab => tab.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');
+            } else {
+                // Fallback: find the clicked button
+                const buttons = document.querySelectorAll('.dataset-tab');
+                buttons.forEach(btn => {
+                    if (btn.textContent.includes(type === 'train' ? 'Training' : 'Test')) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+
+            // Update content
+            document.querySelectorAll('.dataset-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(type + 'Data').classList.add('active');
+        }
+
+        function filterData(type, searchTerm) {
+            const data = type === 'train' ? trainData : testData;
+            if (!data) return;
+
+            const filtered = data.filter(sample => {
+                const text = sample.text.toLowerCase();
+                const search = searchTerm.toLowerCase();
+                return text.includes(search) || 
+                       sample.entities.some(e => e.text.toLowerCase().includes(search) || e.label.toLowerCase().includes(search));
+            });
+
+            displayDataset(type, filtered);
+        }
+    </script>
+</body>
+</html>
